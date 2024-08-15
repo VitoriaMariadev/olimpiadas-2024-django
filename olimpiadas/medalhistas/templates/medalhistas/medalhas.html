@@ -1,0 +1,73 @@
+{% load static %}
+<!-- precisa dessa linha para funcionar -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olimpiadas</title>
+    <link rel="stylesheet" href="{% static 'medalhistas/styles.css' %}" />
+    <!-- Essa linha de código é a que linka o CSS -->
+  </head>
+
+    <body class="body-medalhas">
+
+        <div class="titulo">
+            <h1>MEDALHAS - {{pais}}</h1>
+        </div>
+
+        <div class="container-medalhas">
+
+            <div class="container-medalhas-divisao">
+
+                
+                <div class="container-medalhas-divisao-nome">
+                    <p>Nome</p>
+                </div>
+
+                <hr>
+
+                <div class="container-medalhas-divisao-esporte">
+                    <p>Esporte</p>
+                </div>
+
+                <hr>
+
+                <div class="container-medalhas-divisao-medalha">
+                    <p>Medalha</p>
+                </div>
+
+            </div>
+
+            {% for informacao in informacoes %}
+
+                <div class="container-medalhas-informacoes">
+
+                    <div class="container-medalhas-informacoes-nome">
+                        <p>{{informacao.nome}}</p>
+                    </div>
+
+                    <div class="container-medalhas-informacoes-esporte">
+                        <p>{{informacao.esporte}}</p>
+                    </div>
+
+                    <div class="container-medalhas-informacoes-medalha">
+                        <p>{{informacao.medalha}}</p>
+                    </div>
+
+                </div>
+                <hr class="informacoes">
+
+            {% endfor %}
+
+            
+
+        </div>
+
+        
+
+    </body>
+
+
+</html>
